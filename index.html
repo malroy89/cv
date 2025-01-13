@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Dzmitry Lamaka</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="17887bbf-ac91-8057-8c14-f0b8df81299f" class="page sans"><header><h1 class="page-title">Dzmitry Lamaka</h1><p class="page-description"></p></header><div class="page-body"><div id="17887bbf-ac91-8112-8eb2-f4e8c1c29d72" class="column-list"><div id="17887bbf-ac91-8190-bf29-e9f044284c61" style="width:31.25%" class="column"><h2 id="17887bbf-ac91-81e0-b26a-e06e49327794" class="">Software Engineer</h2><p id="17887bbf-ac91-81a6-a6d2-cf680ebbe7a6" class=""><strong>Android, Kotlin, Java</strong></p><p id="17887bbf-ac91-8167-8ab5-f003e7613619" class="">📍  Berlin, Germany</p><p id="17887bbf-ac91-8180-9ba9-dd9c4519da67" class="">✉️   <a href="mailto:dzmitry.lamaka[at]gmail.com">dzmitry.lamaka[at]gmail.com</a></p><p id="17887bbf-ac91-81fe-bc26-d0effbd08efa" class="">🔗   <a href="https://www.linkedin.com/in/dzmitry-lamaka-4421097a/">LinkedIn Profile</a></p><h2 id="17887bbf-ac91-81f7-8800-d0e1a2bf5a5e" class="">📌  Info  ——————</h2><ul id="17887bbf-ac91-806a-889e-c553845fdb7b" class="bulleted-list"><li style="list-style-type:disc">Experience in building standalone SDKs for Android</li></ul><ul id="17887bbf-ac91-815a-b33f-c7131c5ffa84" class="bulleted-list"><li style="list-style-type:disc">Possess a permit to work in Germany 🇩🇪 (<strong>Niederlassungserlaubnis</strong>)</li></ul><ul id="17887bbf-ac91-81e2-bc69-d4f8aeb704d8" class="bulleted-list"><li style="list-style-type:disc">Experienced in working with cross-functional and distributed teams</li></ul><h2 id="17887bbf-ac91-813e-8dec-db7af600c21b" class="">🛠  Skills  ——————</h2><ul id="17887bbf-ac91-8125-a2b4-c28e357ac98a" class="bulleted-list"><li style="list-style-type:disc"><strong>Kotlin, Java</strong></li></ul><ul id="17887bbf-ac91-8177-a063-eb52f3875af6" class="bulleted-list"><li style="list-style-type:disc"><strong>Android SDK</strong></li></ul><ul id="17887bbf-ac91-81cc-9039-fc2de5b87d59" class="bulleted-list"><li style="list-style-type:disc"><strong>Jetpack Compose</strong>, <strong>Kotlin Coroutines</strong>, <strong>Flow, DI (Dagger 2, Hilt)</strong></li></ul><ul id="17887bbf-ac91-814a-8c55-fe7e3a0fe9ef" class="bulleted-list"><li style="list-style-type:disc"><strong>Mockito, Robolectric, MockWebServer, Espresso, assertJ, Truth</strong></li></ul><ul id="17887bbf-ac91-81bf-b152-fa62622fc446" class="bulleted-list"><li style="list-style-type:disc"><strong>Gradle, Jenkins, GitHub Actions</strong></li></ul></div><div id="17887bbf-ac91-8103-9ec3-c23fced2fb62" style="width:68.75%" class="column"><h2 id="17887bbf-ac91-8103-b28b-ecccadd54dd9" class="">👨‍💻  Professional Experience  ——————</h2><div id="17887bbf-ac91-80eb-966d-e0229d97c99e" class="column-list"><div id="17887bbf-ac91-8023-abba-dcc701be9425" style="width:37.5%" class="column"><p id="17887bbf-ac91-8011-ba99-c71dd86c1550" class=""><mark class="highlight-gray">Nov 2023 — Jun 2024</mark></p></div><div id="17887bbf-ac91-803b-b6d5-ce6e285bde1c" style="width:106.25%" class="column"><h3 id="17887bbf-ac91-80b1-860d-cc42f8eb0d3b" class="">Software Engineer II</h3><p id="17887bbf-ac91-80f4-94ad-f542a4ccf766" class="">@ Wayfair, Berlin 🇩🇪</p><blockquote id="17887bbf-ac91-8043-8b3b-fd490b268198" class=""><strong>Wayfair</strong> is an online retailer of home goods, offering furniture, décor, and more across North America and Europe</blockquote><p id="17887bbf-ac91-8059-907c-cef485a04f2b" class="">I work in the payments team, supporting and developing new features for the internal Payments SDK on Android</p><ul id="17887bbf-ac91-800e-ae3e-cf0b6adbc348" class="bulleted-list"><li style="list-style-type:disc"><strong>Led the full-cycle migration of the PayPal SDK (v3 → v5)</strong>, addressing dependency conflicts and compatibility issues. Implemented feature toggles for a seamless transition, collaborating with cross-functional teams to ensure secure and efficient payment processing</li></ul><ul id="17887bbf-ac91-80e9-a109-f2c0d631b7f5" class="bulleted-list"><li style="list-style-type:disc">Integrated Wayfair Credit Card (WFCC) and Wayfair MasterCard (WFMC) payment methods into the Payment SDK, enabling users to securely add and manage these payment options. Worked closely with cross-functional teams to optimize transaction processing and improve payment flow efficiency.</li></ul><ul id="17887bbf-ac91-80f5-9b92-dd7cbb74e6b1" class="bulleted-list"><li style="list-style-type:disc"><strong>Migrated multiple payment executor services to dedicated PagerDuty services using Terraform and Datadog</strong>, enhancing system monitoring, incident triggering, and overall performance</li></ul><ul id="17887bbf-ac91-8073-ab2f-f202df44937c" class="bulleted-list"><li style="list-style-type:disc"><strong>Organized and led knowledge-sharing sessions with the team in India</strong>, focusing on Kotlin best practices and development techniques. Facilitated discussions to foster collaboration and elevate technical expertise across teams</li></ul></div></div><hr id="17887bbf-ac91-80e2-87eb-c39826c81d86"/><div id="17887bbf-ac91-812b-ab70-e23c06660f95" class="column-list"><div id="17887bbf-ac91-8116-b3fd-c513513dcc8f" style="width:37.5%" class="column"><p id="17887bbf-ac91-8191-a24a-c219e49d494d" class="block-color-gray">Nov 2023 — Jun 2024</p><p id="17887bbf-ac91-8184-9f65-d53c4caa7ecb" class="">
+</p></div><div id="17887bbf-ac91-8195-b1ae-d3f63940b813" style="width:106.24999999999997%" class="column"><h3 id="17887bbf-ac91-8153-8fa2-ccaeaa2fe797" class="">Senior Android Engineer</h3><p id="17887bbf-ac91-8180-addc-c46cb188a8d3" class="">@ mobile.de, Berlin 🇩🇪</p><blockquote id="17887bbf-ac91-810c-8927-f5379d561ddb" class=""><strong>mobile.de</strong> is a leading online marketplace for buying and selling vehicles, offering a user-friendly platform connecting millions of buyers and sellers across Europe</blockquote><p id="17887bbf-ac91-81ef-8f49-d2dd7ea72198" class="">Developed and maintained search-related features within the mobile.de application to enhance user experience and functionality</p><ul id="17887bbf-ac91-812a-bc2b-c2d64c624784" class="bulleted-list"><li style="list-style-type:disc">Development and integration of support for a new type of transportation vehicle – e-bikes – into the application, including the necessary functionalities and features</li></ul><ul id="17887bbf-ac91-814e-a514-feb653155874" class="bulleted-list"><li style="list-style-type:disc">Contributed to improving search functionality and adding vehicle leasing options in collaboration with our banking partners, meeting their requirements and driving company revenue</li></ul><ul id="17887bbf-ac91-816a-b9b7-cd2252426e51" class="bulleted-list"><li style="list-style-type:disc">As part of a strategy to modernize the app&#x27;s technology stack and enhance its performance and scalability, participated in the modularization of the app and refactoring of the Search screen by migrating from Java to Kotlin, transitioning from MVP to MVVM architecture, and adopting Kotlin Coroutines and Kotlin Coroutines Flow</li></ul><ul id="17887bbf-ac91-814b-9c1a-d2b75bb17e77" class="bulleted-list"><li style="list-style-type:disc">Maintained existing functionality, addressed bugs, and improved the stability of the search functionality, resulting in an overall enhancement of the user experience and search functionality within the application</li></ul></div></div><p id="17887bbf-ac91-8160-80cd-f0d4d703c070" class="">
+</p><hr id="17887bbf-ac91-81b7-a720-d2fa090103d3"/><div id="17887bbf-ac91-8138-b082-d6d93112cdc3" class="column-list"><div id="17887bbf-ac91-81b1-bf14-cd593fc82333" style="width:37.5%" class="column"><p id="17887bbf-ac91-8141-80fd-c377a6d9b4dd" class="block-color-gray">Sep 2020 — Oct 2023</p><p id="17887bbf-ac91-811a-bcff-fc9098ca2b04" class="">
+</p></div><div id="17887bbf-ac91-81ab-b34d-d71a7eb77df5" style="width:100%" class="column"><h3 id="17887bbf-ac91-817f-96f7-cc11aa739cf8" class="">Senior Android Engineer</h3><p id="17887bbf-ac91-816b-8ec9-fda4affd8e94" class="">@ OneFootball, Berlin 🇩🇪</p><blockquote id="17887bbf-ac91-811f-a74e-d6cb4b4a55af" class=""><strong>OneFootball</strong> is a football media platform, providing football news, matches and statistics</blockquote><p id="17887bbf-ac91-8140-9f59-d35c49c79b9d" class="">Contributed to the development, implementation, and maintenance of various features and functionalities within the OneFootball app</p><ul id="17887bbf-ac91-813e-a6aa-d57b86285dd3" class="bulleted-list"><li style="list-style-type:disc">I led the refactoring and improvement of the app&#x27;s authentication layer using Kotlin, Kotlin Coroutines, and OkHttp, which facilitated the migration of the backend&#x27;s APIs to token-based authentication using JWT. This resulted in improved security and better data protection</li></ul><ul id="17887bbf-ac91-814a-a653-e8168959f103" class="bulleted-list"><li style="list-style-type:disc">I led the implementation of a redesign for the 1x2 betting component using <strong>Jetpack Compose</strong>, resulting in new opportunities for growth and increased security for betting revenues, as the 1x2 betting component is a major revenue key-driver for the app. The redesign also resulted in an improved user experience and better overall performance of the component</li></ul><ul id="17887bbf-ac91-8194-8d8b-c43c211dbd24" class="bulleted-list"><li style="list-style-type:disc">I contributed to the implementation of a quizzes feature using <strong>Jetpack Compose</strong>, which resulted in increased user engagement and an uptick in the number of authenticated users on the platform. While specific figures may vary, user feedback and metrics indicated positive results, including longer app usage time and improved user satisfaction</li></ul><ul id="17887bbf-ac91-811f-b8ef-e9670753b561" class="bulleted-list"><li style="list-style-type:disc">I implemented the reactions component for articles using <strong>Jetpack Compose</strong>, resulting in an increase in authenticated users and improved user engagement with the app. While exact figures may vary, user feedback and metrics showed positive results in terms of increased user retention</li></ul><ul id="17887bbf-ac91-8140-8071-f0bf12ee8b4a" class="bulleted-list"><li style="list-style-type:disc">I participated in the migration of the app&#x27;s ad-tech layer from <strong>MoPub</strong> to <strong>Google Ad Manager</strong>, resulting in improved monetization opportunities and a more streamlined ad system</li></ul><ul id="17887bbf-ac91-8180-ba5a-e675b7abf3a0" class="bulleted-list"><li style="list-style-type:disc">I led the migration of the entire project from a poly- to mono-repo, resulting in improved developer experience and reduced time required to support the project, especially with dependency updates</li></ul><ul id="17887bbf-ac91-8188-b4fa-ebacbef9d6b1" class="bulleted-list"><li style="list-style-type:disc">I took a leading role in revamping the user settings layer, which facilitated the migration of user settings to the backend, resulting in improved performance, better data management, and enhanced user experience</li></ul><ul id="17887bbf-ac91-819f-91c3-cefeface0959" class="bulleted-list"><li style="list-style-type:disc">As part of the hiring process, I participated in technical interviews and pair programming sessions to assess candidates&#x27; technical skills, problem-solving abilities, and team collaboration</li></ul><ul id="17887bbf-ac91-8119-9054-fdb672cffa75" class="bulleted-list"><li style="list-style-type:disc">Introduced the role of Release Manager in the team that rotated among team members every week, which resulted in improved accountability, better communication, and streamlined release processes</li></ul><ul id="17887bbf-ac91-81b6-9893-d1beb142c173" class="bulleted-list"><li style="list-style-type:disc">As a mentor for junior developers, I provided guidance on Android development best practices, Kotlin language features, debugging techniques, and helped with code reviews and project architecture</li></ul><p id="17887bbf-ac91-816d-a09c-edbb6bd2fa44" class="">
+</p></div></div><hr id="17887bbf-ac91-8106-bde4-e2606902de18"/><div id="17887bbf-ac91-8173-bc44-cbd9c026c376" class="column-list"><div id="17887bbf-ac91-814e-8ae0-c5cb72414d39" style="width:25%" class="column"><p id="17887bbf-ac91-81a3-b14e-e0de0d75ecd7" class="block-color-gray">Sep 2018 — Aug 2020</p><p id="17887bbf-ac91-81ea-8b36-e7f0fa14c950" class="">
+</p></div><div id="17887bbf-ac91-81c9-90e9-e35cc6858738" style="width:75%" class="column"><h3 id="17887bbf-ac91-81da-bb62-c930ffe339d9" class="">Senior Mobile Engineer</h3><p id="17887bbf-ac91-81f7-b5fe-d7cdcc9984e4" class="">@ Smaato Inc., Berlin 🇩🇪</p><blockquote id="17887bbf-ac91-81d3-be86-dd967aa224e2" class=""><strong>Smaato</strong> is the global in-app advertising platform that connects apps with advertisers. </blockquote><p id="17887bbf-ac91-8186-b583-e570be627d8d" class="">Development of the modular <strong>Mobile Advertising SDK</strong> that contains <strong>zero dependencies</strong> and written purely on <strong>Java </strong>and <strong>Android SDK.</strong></p><ul id="17887bbf-ac91-81bb-80df-cde826c9fd8d" class="bulleted-list"><li style="list-style-type:disc">Implemented a <strong>Header Bidding</strong> (ad-auctions) module. That allowed to successfully onboard two new big publishers (~100K daily users each)</li></ul><ul id="17887bbf-ac91-81f7-a427-d57c00d6233b" class="bulleted-list"><li style="list-style-type:disc">Owned an implementation of <strong>In-App Bidding</strong> (client side ad-auctions) module that allowed to onboard a mediation SDK with a huge number of publishers</li></ul><ul id="17887bbf-ac91-81a8-b7a0-c87924213589" class="bulleted-list"><li style="list-style-type:disc">Participated in implementation of <strong>Video</strong> and <strong>MRAID </strong>(HTML ads)<strong> </strong>ad-formats<strong> </strong>support. That extended a number of supported ad-formats by the SDK and helped to onboard 6 new publishers </li></ul><ul id="17887bbf-ac91-8131-9095-d3abcb126e0a" class="bulleted-list"><li style="list-style-type:disc">Implemented <strong>mediation adapters</strong> for <strong>MoPub</strong> and <strong>AdMob</strong>, that allowed to consume Smaato ads via those SDKs and helped to onboard 4 new publishers</li></ul><ul id="17887bbf-ac91-8118-9295-ed45ca7ae1cc" class="bulleted-list"><li style="list-style-type:disc">Participated in implementation and support of UI-tests in <strong>Kotlin</strong> and unit-tests. That increased a robustness of the SDK and reduced number of bugs &amp; crashes in the publishers&#x27; apps</li></ul><ul id="17887bbf-ac91-810b-9d0f-eb4fcc99f4df" class="bulleted-list"><li style="list-style-type:disc">Collaborated with support engineers in resolving issues and providing answers to publishers&#x27; questions</li></ul><ul id="17887bbf-ac91-8106-868e-fd0bfa3f2cbd" class="bulleted-list"><li style="list-style-type:disc">Supported colleagues to design and implement features, helped to fix bugs. That helped to improve knowledge sharing between the team members</li></ul><ul id="17887bbf-ac91-81e4-9b68-d9c9a2f6dd79" class="bulleted-list"><li style="list-style-type:disc">Constantly took initiative to manage and resolve any appearing issues that allowed to release new versions of the SDK as soon as possible</li></ul></div></div><h2 id="17887bbf-ac91-8136-a258-cb247795f091" class="">📚  Education  ——————</h2><div id="17887bbf-ac91-810e-b99f-c8431b94ee12" class="column-list"><div id="17887bbf-ac91-81bf-bc59-d891fd27080a" style="width:25%" class="column"><p id="17887bbf-ac91-8198-a67b-ed4b3bfe18c9" class=""><mark class="highlight-gray">2007 — 2012</mark></p><p id="17887bbf-ac91-8197-9243-c32db204bd65" class="">
+</p></div><div id="17887bbf-ac91-8199-b528-e84f0327b6f6" style="width:75%" class="column"><p id="17887bbf-ac91-81c7-9d0e-c869083d7237" class="">Bachelor&#x27;s Degree in Software Engineering</p><p id="17887bbf-ac91-812c-bd24-f7450cf24c2a" class=""><mark class="highlight-gray">Yanka Kupala State University of Hrodna, Belarus</mark></p></div></div></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
